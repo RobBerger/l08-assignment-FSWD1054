@@ -15,7 +15,6 @@ function ProductList(props) {
         </ListGroup.Item>
         )
     }
-}
 
 return (
     <>
@@ -32,5 +31,6 @@ return (
         </Stack>
     </>
 )
+}
 
 export default ProductList
