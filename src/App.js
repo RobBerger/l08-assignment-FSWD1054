@@ -1,21 +1,25 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import Navigation from './Navigation';
-import ProductList from './ProductList';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './Home'
+import ProductList from './ProductList'
+import Product from './Product'
 
 function App() {
   return (
-  <>
-    <Navigation />
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="products" element={<ProductList />} />
+        <Route path="/" element={<Home />}>
+          <Route index element={<h1>Welcome</h1>}/>
+          <Route path="products" element={<ProductList />} >
+            <Route index element={<p>Select a product for more details</p>}/>
+            <Route path=":productId" element={<Product />} />
+            <Route path="*" element={<h1>Product Not Found</h1>} />
+          </Route>
+        </Route>
+        <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>
-    </>
-  );
+  )
 }
 
-export default App;
+export default App
