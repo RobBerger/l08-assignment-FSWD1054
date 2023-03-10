@@ -25,7 +25,10 @@ function Product(props) {
                 <Card.Title>{productName}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{price}</Card.Subtitle>
                 <Card.Text>{description}</Card.Text>
+                <Button variant="danger" onClick={handleDeleteProduct.bind(this, id)}>Delete</Button>
             </Card.Body>
         </Card>
     )
 }
+
+export default Product
