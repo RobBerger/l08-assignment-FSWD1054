@@ -21,11 +21,14 @@ export const ProductProvider = (props) => {
     }
 
     function getProduct(id) {
-        return products.find(product => product.id === parseInt(id))
+        return axios.get(`http://localhost:3001/products/${id}`)
+            .then(response => 
+                new Promise((resolve) => resolve(response.data)))
     }
 
     function deleteProduct(id) {
-
+        axios.delete(`http://localhost:3001/products/${id}`)
+        .then(refreshProducts)
     }
 
     function addProduct(id) {
