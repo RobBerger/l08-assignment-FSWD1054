@@ -16,7 +16,7 @@ export const ProductProvider = (props) => {
     function refreshProducts() {
         return axios.get("http://localhost/products")
         .then(response => {
-            setProduct(response.data)
+            setProducts(response.data)
         })
     }
 
