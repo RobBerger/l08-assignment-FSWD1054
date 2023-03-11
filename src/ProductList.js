@@ -10,7 +10,7 @@ function ProductList(props) {
     return products.map((product) =>
       <ListGroup.Item key={product.id}>
         <Link to={`/products/${product.id}`} key={product.id} >
-          {product.productName}
+          {product.productName} ${product.price}
         </Link>
       </ListGroup.Item>
     )
