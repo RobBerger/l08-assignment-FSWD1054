@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { ProductContext } from './ProductContext'
 import { useContext, useState, useEffect } from 'react'
 import Spinner from "react-bootstrap/Spinner";
@@ -36,10 +36,11 @@ function Product(props) {
         <Card className="align-self-start w-25">
           <Card.Body>
             <Card.Title>{productName}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">{price}</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">${price}</Card.Subtitle>
             <Card.Text>
               <strong>Discription:</strong> <span>{description}</span>
             </Card.Text>
+            <Link to={`/products/${id}/edit`} className="btn btn-primary mx-3">Edit</Link>
             <Button variant="danger" onClick={handleDeleteProduct.bind(this, id)}>Delete</Button>
           </Card.Body>
       </Card>

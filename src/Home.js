@@ -7,11 +7,12 @@ import { Link, Outlet } from "react-router-dom"
 function Home() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="light" variant="light">
         <Container>
           <Nav className="me-auto">
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/products" className="nav-link">Products</Link>
+            <Link to="/products/new" className="nav-link">New Product</Link>
           </Nav>
         </Container>
       </Navbar>
